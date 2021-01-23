@@ -1,0 +1,25 @@
+<!doctype html>
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<br>
+<p>{{ day.title }}</p>
+<form action="" method="POST">
+    <table class="table">
+        <tr>
+            <th>{{ form.title.label }}</th>
+            <th>{{ form.title }}</th>
+        </tr>
+        <tr>
+            <th>{{ form.text.label }}</th>
+            <th>{{ form.text }}</th>
+        </tr>
+        <tr>
+            <th>{{ form.date.label }}</th>
+            <th>{{ form.date }}</th>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">送信</button>
+    {% csrf_token %}
+</form>
+{% endblock %}
